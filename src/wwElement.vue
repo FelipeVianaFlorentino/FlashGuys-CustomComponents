@@ -200,17 +200,9 @@ export default {
       this.currentDate = newDate;
     },
     goToToday() {
-      this.currentDate = new Date();
-      this.selectedDate = new Date();
-      this.$emit('trigger', {
-        name: 'dateSelected',
-        event: {
-          date: this.selectedDate.toISOString(),
-          day: this.selectedDate.getDate(),
-          month: this.selectedDate.getMonth() + 1,
-          year: this.selectedDate.getFullYear(),
-        },
-      });
+      const today = new Date();
+      this.currentDate = today;
+      this.selectDate(today);
     },
   },
 };

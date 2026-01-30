@@ -178,15 +178,17 @@ export default {
              date.getFullYear() === this.selectedDate.getFullYear();
     },
     selectDate(date) {
-      this.selectedDate = date;
-      this.$emit('trigger', {
-        name: 'dateSelected',
-        event: {
-          date: date.toISOString(),
-          day: date.getDate(),
-          month: date.getMonth() + 1,
-          year: date.getFullYear(),
-        },
+      this.selectedDate = new Date(date.getTime());
+      this.$nextTick(() => {
+        this.$emit('trigger', {
+          name: 'dateSelected',
+          event: {
+            date: this.selectedDate.toISOString(),
+            day: this.selectedDate.getDate(),
+            month: this.selectedDate.getMonth() + 1,
+            year: this.selectedDate.getFullYear(),
+          },
+        });
       });
     },
     prevMonth() {

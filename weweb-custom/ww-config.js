@@ -1,16 +1,41 @@
 export default {
   editor: {
     label: {
-      en: "My Element",
+      en: "Calendar",
+      pt: "Calendário",
     },
   },
-  properties: {
-    textColor: {
+  triggerEvents: [
+    {
+      name: "dateSelected",
       label: {
-        en: "Text color",
+        en: "On date selected",
+        pt: "Ao selecionar data",
+      },
+      event: {
+        date: "",
+        day: 0,
+        month: 0,
+        year: 0,
+      },
+    },
+  ],
+  properties: {
+    primaryColor: {
+      label: {
+        en: "Primary color",
+        pt: "Cor primária",
       },
       type: "Color",
-      defaultValue: "#F23636",
+      defaultValue: "#667eea",
+    },
+    secondaryColor: {
+      label: {
+        en: "Secondary color",
+        pt: "Cor secundária",
+      },
+      type: "Color",
+      defaultValue: "#764ba2",
     },
   },
 };

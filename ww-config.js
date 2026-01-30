@@ -1,4 +1,5 @@
 export default {
+  uid: "flashguys-calendario",
   editor: {
     label: {
       en: "Calendar",
